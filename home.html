@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Welcome To Somewhere Coffee Shop</title>
+        <link rel="stylesheet" href="styles/contentslider.css" />
+        <link rel="stylesheet" href="styles/home.css" />
+        <script src="scripts/nav_menu.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div class="banner">
+                <div class="slider">
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="images/banner.jpg" style="width: 100%" />
+                            <div class="text">Welcome To Our Coffee Shop</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="images/coffee1.png" style="width: 100%" />
+                            <div class="text">
+                                Bringing you the best coffee flavors from around
+                                the world
+                            </div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="images/coffee3.jpg" style="width: 100%" />
+                            <div class="text">
+                                We are conveniently located in lower manhattan
+                                with plans to expand into Brooklyn in 2013
+                                <br />
+                                292 Union Square West at 13th St. New York, New
+                                York 10003 <br />
+                                Telephone: 212.555.5555
+                            </div>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <!-- <br /> -->
+
+                    <!-- The dots/circles -->
+                    <div class="logo" style="text-align: center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <!-- logo -->
+                        <div class="shop_name">Somewhere Coffee Shop</div>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="nav">
+                    <div class="nav_menu">
+                        <a href="home.html" class="active">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="home.html">Location</a>
+                        <a href="home.html">Menu</a>
+                        <a href="home.html">Contact</a>
+                    </div>
+
+                    <div class="cafe">
+                        <img src="images/coffee_cup.jpg" width="135px" alt="" />
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="header">About Somewhere Coffee Shop</div>
+                    <p>
+                        Somewhere Coffee Co. began as a small coffee cart on the
+                        corner of 28th and 3rd street. As the lines began to
+                        grow, we thought "why not open a coffee shop?" and
+                        expanded into our current location. The rest is
+                        Somewhere in history. We have been in the coffee
+                        business for 8 years and are masters at our craft. We
+                        select only the finest beans to go into our blends and
+                        strive for excellence in customer satisfaction. We offer
+                        quiet nooks for sipping and reading your favorite book,
+                        catching up with old friends or simply enjoying a cup
+                        outside and watching the world go by.
+                    </p>
+                    <p>
+                        Whatever your coffee conundrum commands, find it at
+                        Somewhere.
+                    </p>
+                    <div class="three_columns">
+                        <img src="images/coffee1.png" alt="" />
+                        <img src="images/coffee2.jpg" alt="" />
+                        <img src="images/coffee3.jpg" alt="" />
+                    </div>
+                    <h2>NEW Maui Wauwi Blends!</h2>
+                    <p>
+                        Straight from the sun drenched fields of Hawaii, we are
+                        proud to bring you the very best. Our new Maui Wauwi
+                        blend combines the subtle Sumatra aroma with the bold
+                        taste of Kona in one single satisfying cup. For a
+                        limited time only.
+                    </p>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="links">
+                    <a href="hours.html">Hours</a> |
+                    <a href="news.html">News</a> |
+                    <a href="productss.html">Products</a> |
+                    <a href="services.html">Services</a> |
+                    <a href="feedbacks.html">Survey & Feedback</a>
+                </div>
+                <div class="copyright">&copy; 2022</div>
+            </div>
+        </div>
+
+        <!-- slide show -->
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides((slideIndex += n));
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+                showSlides((slideIndex = n));
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(
+                        " active",
+                        ""
+                    );
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+
+            // automatic show
+            let slideIndexAuto = 0;
+            autoShowSlides();
+
+            function autoShowSlides() {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndexAuto++;
+                if (slideIndexAuto > slides.length) {
+                    slideIndexAuto = 1;
+                }
+                slides[slideIndexAuto - 1].style.display = "block";
+                setTimeout(autoShowSlides, 2000); // Change image every 2 seconds
+            }
+        </script>
+
+        <!-- Hieu ung tuyet roi -->
+        <script>
+            function openwindow() {
+                window.open("autumn_effect.htm", "", "width=350,height=500");
+            }
+
+            //Configure below to change URL path to the snow image
+            var snowsrc = "images/snow3.gif";
+            // Configure below to change number of snow to render
+            var no = 20;
+            // Configure whether snow should disappear after x seconds (0=never):
+            var hidesnowtime = 0;
+            // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
+            var snowdistance = "pageheight";
+
+            ///////////Stop Config//////////////////////////////////
+
+            var ie4up = document.all ? 1 : 0;
+            var ns6up = document.getElementById && !document.all ? 1 : 0;
+
+            function iecompattest() {
+                return document.compatMode &&
+                    document.compatMode != "BackCompat"
+                    ? document.documentElement
+                    : document.body;
+            }
+
+            var dx, xp, yp; // coordinate and position variables
+            var am, stx, sty; // amplitude and step variables
+            var i,
+                doc_width = 800,
+                doc_height = 600;
+
+            if (ns6up) {
+                doc_width = self.innerWidth;
+                doc_height = self.innerHeight;
+            } else if (ie4up) {
+                doc_width = iecompattest().clientWidth;
+                doc_height = iecompattest().clientHeight;
+            }
+
+            dx = new Array();
+            xp = new Array();
+            yp = new Array();
+            am = new Array();
+            stx = new Array();
+            sty = new Array();
+            snowsrc =
+                snowsrc.indexOf("dynamicdrive.com") != -1
+                    ? "snow.gif"
+                    : snowsrc;
+            for (i = 0; i < no; ++i) {
+                dx[i] = 0; // set coordinate variables
+                xp[i] = Math.random() * (doc_width - 50); // set position variables
+                yp[i] = Math.random() * doc_height;
+                am[i] = Math.random() * 20; // set amplitude variables
+                stx[i] = 0.02 + Math.random() / 10; // set step variables
+                sty[i] = 0.7 + Math.random(); // set step variables
+                if (ie4up || ns6up) {
+                    if (i == 0) {
+                        document.write(
+                            '<div id="dot' +
+                                i +
+                                '" style="POSITION: absolute; Z-INDEX: ' +
+                                i +
+                                '; VISIBILITY: visible; TOP: 15px; LEFT: 15px;"><a href="http://dynamicdrive.com"><img src=\'' +
+                                snowsrc +
+                                '\' border="0"><\/a><\/div>'
+                        );
+                    } else {
+                        document.write(
+                            '<div id="dot' +
+                                i +
+                                '" style="POSITION: absolute; Z-INDEX: ' +
+                                i +
+                                "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='" +
+                                snowsrc +
+                                '\' border="0"><\/div>'
+                        );
+                    }
+                }
+            }
+
+            function snowIE_NS6() {
+                // IE and NS6 main animation function
+                doc_width = ns6up
+                    ? window.innerWidth - 10
+                    : iecompattest().clientWidth - 10;
+                doc_height =
+                    window.innerHeight && snowdistance == "windowheight"
+                        ? window.innerHeight
+                        : ie4up && snowdistance == "windowheight"
+                        ? iecompattest().clientHeight
+                        : ie4up && !window.opera && snowdistance == "pageheight"
+                        ? iecompattest().scrollHeight
+                        : iecompattest().offsetHeight;
+                if (snowdistance == "windowheight") {
+                    doc_height =
+                        window.innerHeight || iecompattest().clientHeight;
+                } else {
+                    doc_height = iecompattest().scrollHeight;
+                }
+                for (i = 0; i < no; ++i) {
+                    // iterate for every dot
+                    yp[i] += sty[i];
+                    if (yp[i] > doc_height - 50) {
+                        xp[i] = Math.random() * (doc_width - am[i] - 30);
+                        yp[i] = 0;
+                        stx[i] = 0.02 + Math.random() / 10;
+                        sty[i] = 0.7 + Math.random();
+                    }
+                    dx[i] += stx[i];
+                    document.getElementById("dot" + i).style.top = yp[i] + "px";
+                    document.getElementById("dot" + i).style.left =
+                        xp[i] + am[i] * Math.sin(dx[i]) + "px";
+                }
+                snowtimer = setTimeout("snowIE_NS6()", 10);
+            }
+
+            function hidesnow() {
+                if (window.snowtimer) clearTimeout(snowtimer);
+                for (i = 0; i < no; i++)
+                    document.getElementById("dot" + i).style.visibility =
+                        "hidden";
+            }
+
+            if (ie4up || ns6up) {
+                snowIE_NS6();
+                if (hidesnowtime > 0)
+                    setTimeout("hidesnow()", hidesnowtime * 1000);
+            }
+        </script>
+    </body>
+</html>
