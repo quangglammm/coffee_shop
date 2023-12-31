@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Welcome To Somewhere Coffee Shop</title>
+        <title>Somewhere Coffee Shop</title>
         <link rel="stylesheet" href="styles/contentslider.css" />
-        <link rel="stylesheet" href="styles/menu.css" />
+        <link rel="stylesheet" href="styles/blackcoffee.css" />
         <script src="scripts/nav_menu.js"></script>
         <script src="scripts/snowFall.js"></script>
+        <script src="scripts/slideShow.js"></script>
+        <script type="text/javascript" src="scripts/contentslider.js"></script>
     </head>
     <body>
         <div id="container">
@@ -63,7 +65,7 @@
             <div class="main">
                 <div class="nav">
                     <div class="nav_menu">
-                        <a href="home.html">Home</a>
+                        <a href="home.html" >Home</a>
                         <a href="about.html">About</a>
                         <a href="home.html">Location</a>
                         <a href="menu.html" class="active">Menu</a>
@@ -75,9 +77,74 @@
                     </div>
                 </div>
                 <div class="content">
-                    <div class="header">Menu</div>
-                    <div id="list-drinks" class="list-drinks">
-                        
+                    <div class="header">Black Coffee</div>
+                    <div class="container-buy">
+                        <div class="">
+
+                            <div id="slider2" class="sliderwrapper">
+                                <div class="contentdiv">
+                                    <img width="100%" height="100%" src="./images/black-coffee.jpeg" alt="black-coffee">
+                                </div>
+                                <div class="contentdiv">
+                                    <img width="100%" height="100%" src="./images/cafe-breve.jpeg" alt="black-coffee">
+                                </div>
+                                <div class="contentdiv">
+                                    <img width="100%" height="100%" src="./images/capuchino.jpg" alt="black-coffee">
+                                </div>  
+                            </div>
+                            <div id="paginate-slider2" class="pagination">
+                                <a href="#" class="toc">
+                                    <img width="80" height="60" src="./images/black-coffee.jpeg" alt="">
+                                </a> 
+                                <a href="#" class="toc anotherclass">
+                                    <img width="80" height="60" src="./images/cafe-breve.jpeg" alt="">
+                                </a> 
+                                <a href="#" class="toc">
+                                    <img width="80" height="60" src="./images/capuchino.jpg" alt="">
+                                </a> 
+                            </div>
+                            <script type="text/javascript">
+                                featuredcontentslider.init({
+                                    id: "slider2", 
+                                    contentsource: ["inline", ""], 
+                                    toc: "markup", 
+                                    nextprev: ["", ""], 
+                                    revealtype: "click",
+                                    enablefade: [true, 0.2], 
+                                    autorotate: [true, 3000],
+                                    onChange: function(previndex, curindex, contentdivs){ 
+                                    }
+                                })
+                            </script>
+                        </div>
+                        <div class="buy">
+                            <form action="">
+                                <input type="number" name="" id="" min="1" step="1" value="1">
+                                <select>
+                                    <option value="">$2.0(S)</option>
+                                    <option value="">$2.5(M)</option>
+                                    <option value="">$3.0(L)</option>
+                                </select>
+                                <br>
+                                <input type="submit" value="Buy">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="body-content">
+                        <h2 style="color: #64390a; margin-top: 32px;">Benefits & Effects</h2>
+                        <p style="color: #64390a;">
+                            You may love your <span>black coffee</span> in the morning to help you feel energized and get ready for the
+                            day, but how much do you know about it? Do you know how drinking <span>black coffee</span> affects your
+                            body and your mind? Are you aware of the benefits of <span>black coffee</span> and its side effects?
+
+                            <span>Black coffee</span> is simply coffee thats normally brewed without the addition of additives such as
+                            sugar, milk, cream, or added flavors. While it has a sightly bitter taste compared to when it is
+                            flavored with additives, many people love a strong cup of <span>black coffee</span>. In fact, for some, it is part
+                            of their everyday diet.
+                            <br>
+                            In this article, we talk about the benefits of drinking <span>black coffee</span>, how it can help you in losing
+                            weight, potential side effects, as well as how to make the perfect cup of <span>black coffee</span>.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -94,8 +161,9 @@
         </div>
 
         <!-- slide show -->
-
+        
         <script>
+
             let slideIndex = 1;
             showSlides(slideIndex);
 
@@ -150,34 +218,7 @@
                 setTimeout(autoShowSlides, 2000); // Change image every 2 seconds
             }
         </script>
-        <script>
-            const drinks = [
-                {id: 1, name: 'Black Coffee', image_url: './images/black-coffee.jpeg', description: '$2.0(S) - $2.5(M) - $3.0(L)', navigate: 'blackcoffee.html'},
-                {id: 2, name: 'Hot Chocolate', image_url: './images/hot-chocolate.jpg', description: '$2.5(S) - $3.0(M) - $3.5(L)', navigate: 'blackcoffee.html'},
-                {id: 3, name: 'Cafe Breve', image_url: './images/cafe-breve.jpeg', description: '$2.5(S) - $3.0(M) - $3.5(L)', navigate: 'blackcoffee.html'},
-                {id: 4, name: 'Milk Coffee', image_url: './images/milk-coffee.jpg', description: '$1.5(S) - $2.0(M) - $2.5(L)', navigate: 'blackcoffee.html'},
-                {id: 5, name: 'Latte', image_url: './images/latte.jpg', description: '$2.5(S) - $3.0(M) - $3.5(L)', navigate: 'blackcoffee.html'},
-                {id: 6, name: 'Capuchino', image_url: './images/capuchino.jpg', description: '$2.0(S) - $2.5(M) - $3.0(L)', navigate: 'blackcoffee.html'},
-            ];
 
-            let list_drinks = document.getElementById('list-drinks');
-            drinks.forEach((drink)=>{
-                let display = `
-                    <a href=${drink.navigate}>
-                        <div class="drink-item">
-                            <div class="image"> 
-                                <img src=${drink.image_url} alt=${drink.name}>
-                            </div>
-                            <div class="des">
-                                <h3 style="margin: 0">${drink.name}</h3>
-                                <p style="margin: 0">${drink.description}</p>
-                            </div>
-                        </div>
-                    </a>
-                `
-                list_drinks.innerHTML += display;
-            })
-        </script>
         <!-- Hieu ung tuyet roi -->
 
     </body>
