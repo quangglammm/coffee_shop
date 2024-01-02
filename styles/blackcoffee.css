@@ -121,14 +121,14 @@ body {
 }
 .content .container-buy input[type='number']{
     width: 36px;
-    padding: 4px;
+    padding: 5px;
     border: 2px dashed #4b2802;
     color: #64390a;
     font-weight: 700;
 }
 .content .container-buy select{
     width: 80px;
-    padding: 4px;
+    padding: 5px;
     border: 2px dashed #4b2802;
     color: #64390a;
     font-weight: 700;
@@ -136,8 +136,44 @@ body {
 .content .container-buy input[type='submit']{
     margin-top: 12px;
     cursor: pointer;
-    padding: 2px 4px;
+    padding: 5px;
     background-color: #4b2802;
-    color: #f0e7dd5a;
+    color: #cca45c;
     border-radius: 3px;
+    font-weight: bold;
+}
+@media screen and (max-width: 900px) {
+    .content .container-buy{
+        display: block;
+    }
+    .content .container-buy .buy form{
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+    }
+    .content .container-buy select{
+        margin-left: 12px;
+    }
+    .content .container-buy input[type='submit']{
+        margin-top: 0;
+        margin-left: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content .container-buy{
+        display: block;
+    }
+    .content .container-buy .buy form{
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+    }
+    .content .container-buy select{
+        margin-left: 12px;
+    }
+    .content .container-buy input[type='submit']{
+        margin-top: 0;
+        margin-left: 12px;
+    }
 }

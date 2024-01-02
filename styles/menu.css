@@ -64,11 +64,18 @@ body {
     text-decoration: none;
 }
 .list-drinks .drink-item{
-    border: 1px dashed #64390a;
+    border: 1px dashed #4e2801;
     padding: 12px;
     text-align: center;
-    box-shadow: 2px 5px 7px rgba(75, 40, 2, 0.35);
+    box-shadow: 5px 5px 5px rgba(78, 40, 1, 0.35);
 }
+
+.list-drinks .drink-item:hover{
+    box-shadow: 10px 10px 10px rgba(78, 40, 1, 0.75);
+    transition: 1s;
+    transform: scale(1.1);
+}
+
 .list-drinks .drink-item .image{
     width: 100%;
     height: 150px;
@@ -77,15 +84,17 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    margin: 0 auto;
 }
 .list-drinks .drink-item img{
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 .list-drinks .drink-item .des{
     margin-top: 8px;
     text-align: center;
-    background-color: #d9bb85;
+    background-color: #cca45c;
     padding: 8px 0;
 }
 .list-drinks .drink-item h3{
@@ -146,4 +155,85 @@ body {
     border-bottom: 1px dashed #4b2802;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(75, 40, 2, 0.35);
+}
+@media screen and (max-width: 900px) {
+    #container{
+        width: 80%;
+    }
+    main{
+        display: block;
+    }
+    #cafe{
+        display: none;
+    }
+    #ver_menu, #content{
+        width: 100%;
+        font-size: 10px;
+        padding: 5px;
+    }
+    #ver_menu a{
+        float: left;
+        padding: 15px;
+        border-bottom: none;
+        border-right: 1px dashed #4B2802;
+    }
+    footer{
+        padding: 10px;
+        height: 50px;
+    }
+    #links, #copyright{
+        width: 100%;
+        text-align: center;
+    }
+    .img_50{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #container{
+        width: 100%;
+    }
+    main{
+        display: block;
+    }
+    #cafe{
+        display: none;
+    }
+    #ver_menu, #content{
+        width: 100%;
+        font-size: 10px;
+        padding: 5px;
+    }
+    #ver_menu a{
+        width: 100%;
+        float: none;
+        padding: 15px;
+        border-bottom: none;
+        border-right: 1px dashed #4B2802;
+    }
+    footer{
+        padding: 10px;
+        height: 50px;
+    }
+    #links, #copyright{
+        width: 100%;
+        text-align: center;
+    }
+    .img_50{
+        width: 100%;
+    }
+    .three-columns{
+        column-count: auto;
+    }
+    .three-columns img{
+        max-width: 100%;
+        height: auto;
+    }
+    .two-columns{
+        column-count: auto;
+    }
+    .txt{
+        width: 100%;
+    }
 }
