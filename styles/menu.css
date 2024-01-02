@@ -2,8 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #bd7f0f;
     font: 12px Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #bd7f0f url("/images/coffee_seed.png") repeat-x left top;
 }
 
 #container {
