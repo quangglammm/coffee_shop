@@ -20,7 +20,7 @@ body {
 
 .logo {
     background-color: #64390a;
-    padding: 20px;
+    padding: 8px;
     margin-top: -4px;
 }
 
@@ -79,7 +79,7 @@ body {
     overflow: hidden;
 }
 .list-drinks .drink-item img{
-    width: 100%; 
+    width: 100%;
     height: auto;
 }
 .list-drinks .drink-item .des{
