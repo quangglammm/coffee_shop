@@ -288,4 +288,20 @@ body {
     #container {
         width: 100%;
     }
+    .content .container-buy{
+        flex-direction: column;
+    }
+    .content .container-buy .buy {
+        margin: 8px 0;
+    }
+    .content .container-buy input[type='submit'] {
+        width: 100%;
+    }
+    .sliderwrapper, .pagination {
+        margin: auto;
+    }
+    .slideshow-container img {
+        height: 200px !important;
+        object-fit: cover;
+    }
 }
