@@ -1,7 +1,9 @@
 function openwindow() {
     window.open("autumn_effect.htm", "", "width=350,height=500");
 }
-
+window.addEventListener('resize', function() {
+    window.location.reload();
+});
 //Configure below to change URL path to the snow image
 var snowsrc = "images/snow3.gif";
 // Configure below to change number of snow to render
